@@ -40,6 +40,21 @@ const otherBlogs = blogs
   .map((otherBlog) => {
     return otherBlog.meta.en as BlogEntryMetaItem;
   });
+
+const createNewComment = await bcms.entry.create('comment', {
+  content: [],
+  statuses: [],
+  meta: [
+    { lng: 'en',
+      data: {
+        title: "Comment 1",
+        slug: "comment-1",
+        display_name: "Oma",
+        comment_text: "Love it!"
+      }
+    }
+  ]
+})
 ---
 
 <div class="py-24 md:py-32">
